@@ -12,4 +12,6 @@ import org.springframework.stereotype.Service;
  */
 public interface ExampleService {
 	String test();
+	
+	String error();
 }

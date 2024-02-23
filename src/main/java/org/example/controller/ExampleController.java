@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.annotion.WebLog;
 import org.example.serive.ExampleService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,5 +26,11 @@ public class ExampleController {
 	public String test(){
 		return exampleService.test();
 	}
-	
+
+	@GetMapping("/error")
+	@WebLog
+	public String error() {
+		exampleService.error();
+		return "noError";
+	}
 }
